@@ -1,42 +1,57 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <title>INSERT EMPLOYEE</title>
+    <title>Insert Student</title>
 </head>
 <style>
-    *{background-color: #222;
-      color: darkcyan;
-      font-weight: bold;
-      }
-
-</style>
+        *{
+            background-color: #333;
+            color: cyan;
+            font-weight: bold;
+        }
+        </style>
 <body>
-   <form action="insert_process.php" method='post'>
-    <p>Last Name</br>
-    <input type="text" name="last"</p>
+    <form action="insert_process.php" method="post">
+        <p>Last Name<br/>
+        <input type="text" name="last"/></p>
+        
+        <p>First Name<br/>
+        <input type="text" name="first"/></p>
+        
+        <p>Test 1 Grade<br/>
+        <input type="text" name="test1Grade" /></p>
+        
+        <p>Test 2 Grade<br/>
+        <input type="text" name="test2Grade" /></p>
+        
+        <p>Test 3 Grade<br/>
+        <input type="text" name="test3Grade" /></p>
+        
+        <p>Test 4 Grade<br/>
+        <input type="text" name="test4Grade" /></p>
+        
+        <p>Final Exam Grade<br/>
+        <input type="text" name="finalExamGrade" /></p>
+        
+        <input type="submit" value="Save Information" />
+        <input type="button" id= "cancel" name="cancel" value="Cancel"/>
+    </form>
+    <script>
 
-    <p>First Name</br>
-    <input type="text" name="first"</p>
+    let validateForm = function()
+{
+	let cancel = document.getElementById("cancel").value;
+	
+    location.href = "grade_list.php";
+	
+}
+    
+    window.onload = function () 
+{
+	document.getElementById("cancel").onclick = validateForm;
 
-    <p>Department</br>
-    <select name="department">
-      <option value='0'>Choose Your Department</option>
-      <option value='1'>Accounting</option>
-      <option value='2'>Legal</option>
-      <option value='3'>Information Technology</option>
-      <option value='4'>Human Resources</option>
-      
-    </select>
-
-    <p>Position</br>
-    <input type="text" name="position"</p>
-
-    <p>Salary</br>
-    <input type="text" name="salary"</p>
-
-    <p><input type="submit" value="Save Information"/></p>
-   
-   
-   </form>
+}
+</script>
 </body>
 </html>
